@@ -49,6 +49,7 @@ class AIChatUIPageHandler : public mojom::AIChatUIHandler,
   void OpenURL(const GURL& url) override;
   void OpenLearnMoreAboutBraveSearchWithLeo() override;
   void OpenModelSupportUrl() override;
+  void StopGeneration() override;
   void GoPremium() override;
   void RefreshPremiumSession() override;
   void ManagePremium() override;

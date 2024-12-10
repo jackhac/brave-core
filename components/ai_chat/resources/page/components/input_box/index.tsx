@@ -29,6 +29,8 @@ type Props = Pick<
   | 'setIsToolsMenuOpen'
   | 'shouldDisableUserInput'
   | 'handleVoiceRecognition'
+  | 'stopGeneration'
+  | 'isGenerating'
 > &
   Pick<
     AIChatContext,
@@ -47,6 +49,10 @@ function InputBox(props: InputBoxProps) {
 
   const handleSubmit = () => {
     props.context.submitInputTextToAPI()
+  }
+
+  const handleStop = () => {
+    props.context.stopGeneration()
   }
 
   const handleMic = () => {
@@ -154,15 +160,26 @@ function InputBox(props: InputBoxProps) {
           )}
         </div>
         <div>
-          <Button
-            fab
-            kind='plain-faint'
-            onClick={handleSubmit}
-            disabled={props.context.shouldDisableUserInput}
-            title={getLocale('sendChatButtonLabel')}
-          >
-            <Icon name='send' />
-          </Button>
+          {props.context.isGenerating ? (
+            <Button
+              fab
+              kind='plain-faint'
+              onClick={handleStop}
+              disabled={props.context.shouldDisableUserInput}
+              title={getLocale('stopGenerationButtonLabel')}
+            >
+              <Icon name='stop-circle' />
+            </Button>
+          ) : (
+            <Button
+              fab
+              kind='plain-faint'
+              onClick={handleSubmit}
+              title={getLocale('sendChatButtonLabel')}
+            >
+              <Icon name='send' />
+            </Button>
+          )}
         </div>
       </div>
     </form>

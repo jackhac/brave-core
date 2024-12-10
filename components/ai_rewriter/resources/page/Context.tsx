@@ -39,7 +39,9 @@ interface Context extends CharCountContext {
   close: () => void,
   openSettings: () => void,
 
-  acceptGeneratedText: () => void
+  acceptGeneratedText: () => void,
+
+  stopGeneration: () => void
 }
 
 const RewriterContext = React.createContext<Context>({
@@ -76,6 +78,7 @@ const RewriterContext = React.createContext<Context>({
 
   acceptGeneratedText: () => { },
 
+  stopGeneration: () => {},
   ...defaultCharCountContext,
 })
 
@@ -241,7 +244,9 @@ export default function Context(props: React.PropsWithChildren) {
       getRewriterPageHandler().insertTextAndClose(generatedText)
         .finally(() => setIsGenerating(false))
     },
-
+    stopGeneration: () => {
+      setIsGenerating(false)
+    },
     ...charCountContext
   }), [initialText, instructionsText, actionType, actionList, generatedText, isGenerating, forwardHistory, charCountContext.inputTextCharCountDisplay, charCountContext.isCharLimitApproaching, charCountContext.isCharLimitExceeded, backHistory, actionList, isToolsMenuOpen])
 

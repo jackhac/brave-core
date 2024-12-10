@@ -52,6 +52,7 @@ export interface ConversationContext extends CharCountContext {
   handleResetError: () => void
   setInputText: (text: string) => void
   submitInputTextToAPI: () => void
+  stopGeneration: () => void
   resetSelectedActionType: () => void
   handleActionTypeClick: (actionType: mojom.ActionType) => void
   setIsToolsMenuOpen: (isOpen: boolean) => void
@@ -91,6 +92,7 @@ const defaultContext: ConversationContext = {
   handleResetError: () => { },
   setInputText: () => { },
   submitInputTextToAPI: () => { },
+  stopGeneration: () => { },
   resetSelectedActionType: () => { },
   handleActionTypeClick: () => { },
   setIsToolsMenuOpen: () => { },

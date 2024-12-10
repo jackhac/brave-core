@@ -554,6 +554,7 @@ const preview: Meta<CustomArgs> = {
         retryAPIRequest: () => {},
         handleResetError: () => {},
         submitInputTextToAPI: () => {},
+        stopGeneration: () => {},
         resetSelectedActionType: () => {},
         handleActionTypeClick: () => {},
         setIsToolsMenuOpen: () => {}

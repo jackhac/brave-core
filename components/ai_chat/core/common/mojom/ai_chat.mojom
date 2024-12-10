@@ -357,6 +357,7 @@ interface AIChatUIHandler {
   OpenURL(url.mojom.Url url);
   OpenLearnMoreAboutBraveSearchWithLeo();
   OpenModelSupportUrl();
+  StopGeneration();
   GoPremium();
   RefreshPremiumSession();
   ManagePremium();

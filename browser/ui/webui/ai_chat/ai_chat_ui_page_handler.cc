@@ -180,6 +180,14 @@ void AIChatUIPageHandler::OpenModelSupportUrl() {
   OpenURL(GURL(kLeoModelSupportUrl));
 }
 
+void AIChatUIPageHandler::StopGeneration() {
+  if (!active_chat_tab_helper_) {
+    return;
+  }
+  // ToDo: Add logic to stopGeneration.
+  // active_chat_tab_helper_->StopGeneration();
+}
+
 void AIChatUIPageHandler::ChatContextObserver::WebContentsDestroyed() {
   page_handler_->HandleWebContentsDestroyed();
 }
