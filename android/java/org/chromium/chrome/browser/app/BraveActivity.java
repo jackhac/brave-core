@@ -32,7 +32,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import org.chromium.brave.browser.customize_menu.CustomizeMenuUtils;
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -231,7 +231,11 @@ import org.chromium.mojo.bindings.ConnectionErrorHandler;
 import org.chromium.mojo.system.MojoException;
 import org.chromium.ui.KeyboardUtils;
 import org.chromium.ui.widget.Toast;
-
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
+import android.widget.PopupMenu;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -1304,6 +1308,8 @@ public abstract class BraveActivity extends ChromeActivity
                         public void afterTextChanged(Editable s) {}
                     });
         }
+
+        CustomizeMenuUtils.getMenuItemsByGroup(BraveActivity.this, R.id.PAGE_MENU);
     }
 
     private void setBraveAsDefaultPrivateMode() {

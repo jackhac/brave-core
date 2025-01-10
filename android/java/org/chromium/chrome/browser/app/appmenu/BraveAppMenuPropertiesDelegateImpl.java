@@ -16,6 +16,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import org.chromium.base.supplier.ObservableSupplier;
 import org.chromium.base.supplier.OneshotSupplier;
 import org.chromium.base.supplier.Supplier;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ActivityTabProvider;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel;
@@ -62,6 +63,8 @@ public class BraveAppMenuPropertiesDelegateImpl extends AppMenuPropertiesDelegat
     @Override
     public void prepareMenu(Menu menu, AppMenuHandler handler) {
         super.prepareMenu(menu, handler);
+
+        Log.e("Menu_items", "BraveAppMenuPropertiesDelegateImpl");
 
         maybeReplaceIcons(menu);
     }
