@@ -3,16 +3,20 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at https://mozilla.org/MPL/2.0/.
 
-import("//build/config/android/rules.gni")
-import("//build/config/locales.gni")
-import("//chrome/common/features.gni")
-import("//tools/grit/grit_rule.gni")
+# Import required GN build configuration files
+import("//build/config/android/rules.gni")  # Android build rules
 
+# Define an Android library target for the customize menu feature
 android_library("java") {
+  # Java source files to compile
   sources = [ "java/src/org/chromium/brave/browser/customize_menu/CustomizeMenuUtils.java" ]
+
+  # Dependencies required by this library
   deps = [
-    "//base:base_java",
-    "//chrome/android:chrome_app_java_resources",
+    "//base:base_java",  # Core Java utilities
+    "//chrome/android:chrome_app_java_resources",  # Chrome Android resources
   ]
+
+  # Package name for generated R.java resource class
   resources_package = "org.chromium.brave.browser.customize_menu"
 }
