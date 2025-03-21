@@ -1408,6 +1408,12 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       <message name="IDS_PSST_COMPLETE_CONSENT_DIALOG_FAILED_LIST_TITLE" desc="The title for list of the failed operations on the complete consent dialog">
         Failed operations:
       </message>
+      <message name="IDS_PSST_CONSENT_DIALOG_TASK_STATUS_DONE" desc="Done task's status text for a PSST dialog">
+        Done
+      </message>
+      <message name="IDS_PSST_CONSENT_DIALOG_TASK_STATUS_FAILED" desc="Failed task's status text for a PSST dialog">
+        Failed
+      </message>
 
       <!--TODO I dont know why this flag has been added <if expr="enable_brave_player"> -->
         <message name="IDS_BRAVE_PLAYER_ACTION_VIEW" desc="A label for a button in the omnibox to open the 'Brave Player Page'">
