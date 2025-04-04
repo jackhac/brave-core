@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/webui/side_panel/bookmarks/bookmarks.mojom b/chrome/browser/ui/webui/side_panel/bookmarks/bookmarks.mojom
-index d6beb8bd4f35f6106616ce7e34b7848acbb4d744..511ac1e6936361195f36e646caea24f47aaeca06 100644
+index ad12ee3470305b451b5c0a29fd757658e7180f33..df2b595b6eb7f0491b16e8cc23b66ca31551d87c 100644
 --- a/chrome/browser/ui/webui/side_panel/bookmarks/bookmarks.mojom
 +++ b/chrome/browser/ui/webui/side_panel/bookmarks/bookmarks.mojom
 @@ -23,9 +23,10 @@ enum SortOrder {

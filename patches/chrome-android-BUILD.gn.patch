@@ -1,5 +1,5 @@
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index edeafe78eb5f32b20074f83fcd8ecf41b9b5fc92..1ae3b685668d7d1755874fa6aee2b8d9ba5f2d39 100644
+index e87f926f721f75ed50fb1382e91023ad2fd577b5..667aef98c9608867167e6ad970413f8a991c07f4 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
 @@ -187,6 +187,7 @@ if (current_toolchain == default_toolchain) {

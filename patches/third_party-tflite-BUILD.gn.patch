@@ -1,5 +1,5 @@
 diff --git a/third_party/tflite/BUILD.gn b/third_party/tflite/BUILD.gn
-index 8e0eb4c96df3c47bae0441d1f47e8b29e51b88fa..6b2ce2ba09f3f0147b48329dc9c092985df26e80 100644
+index de54a29e8ac95fefb9655ae3fd057a35168f5f99..dcd52ee2d97ece3ca1b774689563d0e9ca7939f1 100644
 --- a/third_party/tflite/BUILD.gn
 +++ b/third_party/tflite/BUILD.gn
 @@ -219,6 +219,7 @@ tflite_static_library("tflite_builtin_op_resolver") {
