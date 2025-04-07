@@ -5,8 +5,8 @@
 
 #include "brave/components/brave_ads/core/internal/serving/eligible_ads/exclusion_rules/dislike_exclusion_rule.h"
 
-#include "base/strings/string_util.h"
 #include "brave/components/brave_ads/core/internal/ads_core/ads_core_util.h"
+#include "brave/components/brave_ads/core/internal/common/logging_util.h"
 #include "brave/components/brave_ads/core/internal/creatives/creative_ad_info.h"
 #include "brave/components/brave_ads/core/internal/user_engagement/reactions/reactions.h"
 
@@ -26,15 +26,15 @@ std::string DislikeExclusionRule::GetUuid(
   return creative_ad.advertiser_id;
 }
 
-base::expected<void, std::string> DislikeExclusionRule::ShouldInclude(
+bool DislikeExclusionRule::ShouldInclude(
     const CreativeAdInfo& creative_ad) const {
   if (!DoesRespectCap(creative_ad)) {
-    return base::unexpected(base::ReplaceStringPlaceholders(
-        "advertiserId $1 excluded due to being disliked",
-        {creative_ad.advertiser_id}, nullptr));
+    BLOG(1, "advertiserId " << creative_ad.advertiser_id
+                            << " excluded due to being disliked");
+    return false;
   }
 
-  return base::ok();
+  return true;
 }
 
 }  // namespace brave_ads

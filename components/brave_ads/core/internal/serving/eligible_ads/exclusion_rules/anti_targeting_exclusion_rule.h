@@ -31,8 +31,7 @@ class AntiTargetingExclusionRule final
 
   std::string GetUuid(const CreativeAdInfo& creative_ad) const override;
 
-  base::expected<void, std::string> ShouldInclude(
-      const CreativeAdInfo& creative_ad) const override;
+  bool ShouldInclude(const CreativeAdInfo& creative_ad) const override;
 
  private:
   bool DoesRespectCap(const CreativeAdInfo& creative_ad) const;

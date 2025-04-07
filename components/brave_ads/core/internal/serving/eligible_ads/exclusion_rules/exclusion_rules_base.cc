@@ -7,7 +7,6 @@
 
 #include <algorithm>
 
-#include "brave/components/brave_ads/core/internal/common/logging_util.h"
 #include "brave/components/brave_ads/core/internal/creatives/creative_ad_info.h"
 #include "brave/components/brave_ads/core/internal/serving/eligible_ads/exclusion_rules/anti_targeting_exclusion_rule.h"
 #include "brave/components/brave_ads/core/internal/serving/eligible_ads/exclusion_rules/conversion_exclusion_rule.h"
@@ -93,12 +92,9 @@ bool ExclusionRulesBase::AddToCacheIfNeeded(
     return true;
   }
 
-  const auto result = exclusion_rule->ShouldInclude(creative_ad);
-  if (result.has_value()) {
+  if (!exclusion_rule->ShouldInclude(creative_ad)) {
     return false;
   }
-
-  BLOG(2, result.error());
 
   AddToCache(exclusion_rule->GetUuid(creative_ad));
 
