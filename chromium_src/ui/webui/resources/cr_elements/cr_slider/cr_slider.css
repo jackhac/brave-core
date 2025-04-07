@@ -1,0 +1,24 @@
+/* Copyright 2024 The Chromium Authors
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+/* #css_wrapper_metadata_start
+ * #type=style-lit
+ * #import=./cr_slider-chromium.css.js
+ * #scheme=relative
+ * #include=cr-slider-chromium
+ * #css_wrapper_metadata_end */
+
+:host {
+  --cr-slider-active-color: var(--leo-color-button-background);
+  --cr-slider-container-color: var(--leo-color-primary-20);
+  --cr-slider-container-disabled-color: color-mix(in srgb, var(--cr-slider-container-color), transparent 40%);
+  --cr-slider-knob-color-rgb: 69, 81, 209;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --cr-slider-knob-color-rgb: 193, 198, 255;
+  }
+}
+
